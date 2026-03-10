@@ -1,75 +1,76 @@
-# Code Standards
+# Стандарты кода
 
-[← Back to README](README.md)
+[← Назад к README](README.md)
 
-## Code Review Process
+## Процесс code review
 
-What to know:
+Что нужно знать:
 
-* Code Review Best Practices (aims, feedback, reporting, periodicity, reviewers hierarchy)
-* Performs code review for "Merge/Pull requests" in GitLab
-* Performs code review with Atlassian Crucible
-* Gerrit  (online code review) https://gerrit-documentation.storage.googleapis.com/Documentation/3.5.1/intro-how-gerrit-works.html
+* Лучшие практики code review (цели, обратная связь, отчётность, периодичность, иерархия ревьюеров)
+* Проведение code review для Merge/Pull request в GitLab
+* Проведение code review с помощью Atlassian Crucible
+* Gerrit (онлайн code review) https://gerrit-documentation.storage.googleapis.com/Documentation/3.5.1/intro-how-gerrit-works.html
 
-Gerrit is a Git server that provides access control for the hosted Git repositories and a web front-end for doing code review. Code review is a core functionality of Gerrit, but still it is optional and teams can decide to work without code review.
+Gerrit — это Git-сервер, предоставляющий контроль доступа к размещённым репозиториям и веб-интерфейс для code review. Code review — основная функциональность Gerrit, однако она опциональна: команды могут работать и без неё.
 
-## Pre- and Post-commit Code Reviews
+## Pre-commit и post-commit code review
 
-In this regard, there are two types of code review: pre-commit and post-commit. Pre- and post-commit review concepts are quite self-explanatory: pre-commit is a type of review when the code is reviewed before it goes to the main repository of the version control system. Post-commit review takes place after the code has been submitted to the public repository.
+Существует два типа code review: pre-commit и post-commit. Их суть понятна из названий: pre-commit — проверка кода до попадания в основной репозиторий системы контроля версий. Post-commit — после того, как код уже попал в публичный репозиторий.
 
-Have a look at some of the advantages and disadvantages of these two review types before deciding which one to adopt.
+Рассмотрите преимущества и недостатки обоих типов перед тем, как выбрать подходящий.
 
-### Pros of pre-commit:
-- Company's coding quality standards are met before the work is committed to the main repository
-- This scenario helps to make sure the review has been performed, not postponed or omitted
-- Pre-commit reviews ensure other developers in your team won't be affected by bugs that may be found during a review
+### Плюсы pre-commit:
+- Стандарты качества кода соблюдаются до попадания работы в основной репозиторий
+- Такой подход гарантирует, что review будет проведён, а не отложен или пропущен
+- Pre-commit review защищает других разработчиков команды от багов, которые могут быть найдены в ходе проверки
 
-### Cons of pre-commit:
-- Decreases productivity of each developer, since further work on the submitted code is impossible until a successful review, and takes even longer if multiple reviewers are involved
-- After successfully passing a review, the developer could commit a different piece of code, by mistake or otherwise
+### Минусы pre-commit:
+- Снижает продуктивность каждого разработчика, так как дальнейшая работа над кодом невозможна до успешного прохождения review; при нескольких ревьюерах ожидание становится ещё дольше
+- После успешного review разработчик может закоммитить другой код — по ошибке или намеренно
 
-### Pros of post-commit:
-- A developer can work and commit changes to the repository continuously
-- Other team members see the code changes and can alter their work accordingly
-- Some changes can be complex and require multiple steps, so it's convenient to examine each step separately after all of them have been committed
+### Плюсы post-commit:
+- Разработчик может непрерывно работать и коммитить изменения в репозиторий
+- Другие члены команды видят изменения кода и могут скорректировать свою работу
+- Некоторые изменения сложны и требуют нескольких шагов — удобно проверять каждый шаг отдельно после того, как все они закоммичены
 
-### Cons of post-commit:
-- Increased chances of poor code making it into the main repository, hence affecting the entire team's work
-- When defects are found, it may take a while for the developer to switch back to the module they had been working on
+### Минусы post-commit:
+- Повышается вероятность попадания некачественного кода в основной репозиторий, что влияет на работу всей команды
+- При обнаружении дефектов разработчику может потребоваться время, чтобы вернуться к модулю, над которым он работал
 
-## Code Quality Metrics
+## Метрики качества кода
 
-### Qualitative Code Quality Metrics
-Qualitative metrics are subjective measurements that aim to better define what good means.
+### Качественные метрики
 
-#### Extensibility
-Extensibility is the degree to which software is coded to incorporate future growth. The central theme of extensible applications is that developers should be able to add new features to code or change existing functionality without it affecting the entire system.
+Качественные метрики — субъективные измерения, позволяющие точнее определить, что значит «хороший код».
 
-#### Maintainability
-Code maintainability is a qualitative measurement of how easy it is to make changes, and the risks associated with such changes.
+#### Расширяемость (Extensibility)
+Расширяемость — степень, в которой код написан с учётом будущего роста. Главная идея расширяемых приложений: разработчики должны иметь возможность добавлять новые функции или изменять существующую функциональность, не затрагивая всю систему.
 
-#### Readability and Code Formatting
-Readable code should use indentation and be formatted according to standards particular to the language it's written in; this makes the application structure consistent and visible.
+#### Сопровождаемость (Maintainability)
+Сопровождаемость кода — качественная оценка того, насколько легко вносить изменения и каковы риски, связанные с этими изменениями.
 
-#### Clarity
-Clarity is an indicator of quality that says good code should be unambiguous. If you look at a piece of code and wonder what on earth it does, then that code is ambiguous.
+#### Читаемость и форматирование (Readability and Code Formatting)
+Читаемый код должен использовать отступы и быть отформатирован согласно стандартам конкретного языка — это делает структуру приложения последовательной и наглядной.
 
-#### Documentation
-If the program is not documented, it will be difficult for other developers to use it, or even for the same developer to understand the code years from now.
+#### Ясность (Clarity)
+Ясность — показатель качества, означающий, что хороший код должен быть однозначным. Если, глядя на кусок кода, вы не понимаете, что он делает, — этот код неоднозначен.
 
-#### Testing
-Well tested programs are likely to be of higher quality, because much more attention is paid to the inner workings of the code and its impact on users.
+#### Документация (Documentation)
+Если программа не задокументирована, другим разработчикам будет сложно ею пользоваться — и даже сам автор через несколько лет может не понять собственный код.
 
-#### Efficiency
-Efficient code only uses the computing resources it needs to. Another efficiency measurement is that it runs in as little time as possible.
+#### Тестирование (Testing)
+Хорошо протестированные программы, как правило, отличаются более высоким качеством, поскольку значительно больше внимания уделяется внутренней работе кода и его влиянию на пользователей.
 
-### Quantitative Code Quality Metrics
+#### Эффективность (Efficiency)
+Эффективный код использует ровно столько вычислительных ресурсов, сколько необходимо. Ещё одна характеристика эффективности — минимальное время выполнения.
 
-#### Weighted Micro Function Points
-This metric is a modern software sizing algorithm that parses source code and breaks it down into micro functions. The algorithm then produces several complexity metrics from these micro functions, before interpolating the results into a single score.
+### Количественные метрики
 
-#### Halstead Complexity Measures
-The Halstead complexity measures include program vocabulary, program length, volume, difficulty, effort, and the estimated number of bugs in a module.
+#### Взвешенные микрофункциональные точки (Weighted Micro Function Points)
+Эта метрика — современный алгоритм оценки размера программного обеспечения: исходный код разбирается и разбивается на микрофункции. Затем алгоритм вычисляет несколько метрик сложности, после чего сводит результаты в единую оценку.
 
-#### Cyclomatic Complexity
-Cyclomatic complexity is a metric that measures the structural complexity of a program by counting the number of linearly independent paths through a program's source code. 
+#### Меры сложности Холстеда (Halstead Complexity Measures)
+Меры сложности Холстеда включают: словарный запас программы, длину программы, объём, сложность, трудозатраты и предполагаемое количество ошибок в модуле.
+
+#### Цикломатическая сложность (Cyclomatic Complexity)
+Цикломатическая сложность — метрика, измеряющая структурную сложность программы путём подсчёта числа линейно независимых путей в исходном коде.

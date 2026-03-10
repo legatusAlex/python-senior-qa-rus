@@ -1,306 +1,306 @@
-# Common Questions for Senior and Lead Developers
+# Общие вопросы для Senior и Lead разработчиков
 
 ## Soft Skills
 
-### Release tomorrow, but someone doesn't want to merge changes
-1. Identify reasons for resistance to merge:
-   - Technical issues
-   - Code quality concerns
-   - Personal conflicts
-2. Conduct urgent code review
-3. Assess risks:
-   - Possibility of postponing release
-   - Criticality of changes
-4. Find compromise:
-   - Agree on post-release improvements
-   - Separate critical and non-critical changes
-5. Escalate to team lead/manager if necessary
+### Завтра релиз, но кто-то не хочет вливать изменения
+1. Выяснить причины сопротивления:
+   - Технические проблемы
+   - Сомнения в качестве кода
+   - Личные конфликты
+2. Провести срочный code review
+3. Оценить риски:
+   - Возможность перенести релиз
+   - Критичность изменений
+4. Найти компромисс:
+   - Договориться об улучшениях после релиза
+   - Разделить критичные и некритичные изменения
+5. При необходимости эскалировать к team lead / менеджеру
 
-### Feature without requirements - how to proceed?
-1. Organize stakeholder meeting
-2. Create list of questions and assumptions
-3. Draft requirements document
-4. Align requirements with stakeholders
-5. Iteratively refine requirements during development
+### Фича без требований — как действовать?
+1. Организовать встречу со стейкхолдерами
+2. Составить список вопросов и допущений
+3. Подготовить черновик требований
+4. Согласовать требования со стейкхолдерами
+5. Итеративно уточнять требования в ходе разработки
 
-### Subordinate is late with multiple tasks
-1. Conduct one-on-one meeting:
-   - Understand reasons for delays
-   - Identify needed support
-2. Help with task prioritization
-3. Offer additional resources
-4. Set intermediate checkpoints
-5. Adjust estimates and deadlines
+### Подчинённый систематически не успевает с задачами
+1. Провести личную встречу (1-on-1):
+   - Понять причины задержек
+   - Выяснить, какая поддержка нужна
+2. Помочь с приоритизацией задач
+3. Предложить дополнительные ресурсы
+4. Установить промежуточные контрольные точки
+5. Скорректировать оценки и дедлайны
 
-### What to do if task is blocked?
-1. Clearly identify blocking cause
-2. Look for workarounds
-3. Escalate issue to appropriate people
-4. Switch to other tasks
-5. Regularly check blocking status
+### Что делать, если задача заблокирована?
+1. Чётко определить причину блокировки
+2. Найти обходные пути
+3. Эскалировать проблему нужным людям
+4. Переключиться на другие задачи
+5. Регулярно проверять статус блокировки
 
-### Where Agile is not suitable?
-1. Projects with fixed budget and timeline
-2. Mission-critical systems (healthcare, aviation)
-3. Projects with strict regulatory requirements
-4. Small simple projects
-5. Teams with geographically distributed members
+### Где Agile не подходит?
+1. Проекты с фиксированным бюджетом и сроками
+2. Критически важные системы (медицина, авиация)
+3. Проекты с жёсткими регуляторными требованиями
+4. Небольшие простые проекты
+5. Команды с географически распределёнными участниками
 
-### Handling failed key feature
-1. Quickly assess failure causes
-2. Inform stakeholders
-3. Propose alternative solutions
-4. Create recovery plan
-5. Extract lessons for future projects
+### Ключевая фича провалилась — что делать?
+1. Быстро оценить причины провала
+2. Уведомить стейкхолдеров
+3. Предложить альтернативные решения
+4. Создать план восстановления
+5. Извлечь уроки для будущих проектов
 
-### Documentation resistance
-1. Explain documentation importance:
-   - For new team members
-   - For project maintenance
-   - For knowledge transfer
-2. Implement simple tools
-3. Start small - document key points
-4. Automate documentation generation
-5. Make documentation part of development process
+### Сопротивление документированию
+1. Объяснить важность документации:
+   - Для новых членов команды
+   - Для поддержки проекта
+   - Для передачи знаний
+2. Внедрить простые инструменты
+3. Начать с малого — документировать ключевые моменты
+4. Автоматизировать генерацию документации
+5. Сделать документирование частью процесса разработки
 
-### Conflict resolution
-1. Listen to all sides of conflict
-2. Identify root cause
-3. Seek compromise solution
-4. Establish clear interaction rules
-5. Monitor agreement compliance
+### Разрешение конфликтов
+1. Выслушать все стороны конфликта
+2. Определить первопричину
+3. Найти компромиссное решение
+4. Установить чёткие правила взаимодействия
+5. Следить за соблюдением договорённостей
 
-### Technology selection
-1. Define requirements and constraints:
-   - Performance
-   - Scalability
-   - Security
-2. Evaluate existing technologies
-3. Conduct POC (proof of concept)
-4. Consider long-term implications
-5. Align choice with team
+### Выбор технологии
+1. Определить требования и ограничения:
+   - Производительность
+   - Масштабируемость
+   - Безопасность
+2. Оценить существующие технологии
+3. Провести POC (proof of concept)
+4. Учесть долгосрочные последствия
+5. Согласовать выбор с командой
 
-## Technical Leadership
+## Техническое лидерство
 
-### How to handle technical debt?
-1. Regular monitoring:
-   - Code quality metrics
-   - Performance
-   - Test coverage
-2. Prioritize critical issues
-3. Allocate time for refactoring
-4. Document known issues
-5. Balance new features and improvements
+### Как работать с техническим долгом?
+1. Регулярный мониторинг:
+   - Метрики качества кода
+   - Производительность
+   - Покрытие тестами
+2. Приоритизировать критические проблемы
+3. Выделять время на рефакторинг
+4. Документировать известные проблемы
+5. Балансировать между новыми фичами и улучшениями
 
-### Managing team growth
-1. Clear onboarding process:
-   - Documentation
-   - Mentoring
-   - Training
-2. Document processes and knowledge
-3. Assign mentors
-4. Regular 1-on-1 meetings
-5. Gradual increase in responsibility
+### Управление ростом команды
+1. Чёткий процесс онбординга:
+   - Документация
+   - Менторство
+   - Обучение
+2. Документировать процессы и знания
+3. Назначать менторов
+4. Регулярные встречи 1-on-1
+5. Постепенное расширение ответственности
 
-### Handling production incidents
-1. Establish escalation process
-2. Have recovery plan:
-   - Rollback procedures
-   - Backup systems
-3. Maintain incident log
-4. Conduct post-mortem analysis
-5. Improve monitoring and alerting
+### Работа с production-инцидентами
+1. Выстроить процесс эскалации
+2. Иметь план восстановления:
+   - Процедуры rollback
+   - Резервные системы
+3. Вести журнал инцидентов
+4. Проводить post-mortem анализ
+5. Улучшать мониторинг и алертинг
 
-### Team motivation
-1. Clear goals and expectations
-2. Recognition of achievements
-3. Growth opportunities:
-   - Learning
-   - Conferences
-   - New technologies
-4. Decision-making autonomy
-5. Healthy work-life balance
+### Мотивация команды
+1. Чёткие цели и ожидания
+2. Признание достижений
+3. Возможности для роста:
+   - Обучение
+   - Конференции
+   - Новые технологии
+4. Автономия в принятии решений
+5. Здоровый баланс работы и личной жизни
 
-### Project estimation
-1. Use historical data
-2. Consider risks and uncertainties
-3. Involve team in estimation
-4. Add buffer for contingencies
-5. Regularly reassess progress
+### Оценка проекта
+1. Использовать исторические данные
+2. Учитывать риски и неопределённости
+3. Привлекать команду к оценке
+4. Добавлять буфер на непредвиденные обстоятельства
+5. Регулярно пересматривать прогресс
 
-## Development Process
+## Процесс разработки
 
-### How to organize code review?
-1. Establish clear review criteria:
-   - Code quality
-   - Test coverage
-   - Documentation
-2. Automate checks
-3. Provide constructive feedback
-4. Conduct timely reviews
-5. Use code review for learning
+### Как организовать code review?
+1. Установить чёткие критерии проверки:
+   - Качество кода
+   - Покрытие тестами
+   - Документация
+2. Автоматизировать проверки
+3. Давать конструктивную обратную связь
+4. Проводить review своевременно
+5. Использовать code review для обучения
 
-### Working with large tasks
-1. Break into subtasks
-2. Identify critical path
-3. Set intermediate goals
-4. Regularly track progress
-5. Be ready for adjustments
+### Работа с большими задачами
+1. Разбить на подзадачи
+2. Определить критический путь
+3. Установить промежуточные цели
+4. Регулярно отслеживать прогресс
+5. Быть готовым к корректировкам
 
-### Implementing process changes
-1. Start small
-2. Gather feedback
-3. Measure results
-4. Adjust based on experience
-5. Scale successful practices
+### Внедрение изменений в процессы
+1. Начинать с малого
+2. Собирать обратную связь
+3. Измерять результаты
+4. Корректировать на основе опыта
+5. Масштабировать успешные практики
 
-## Scrum and Agile
+## Scrum и Agile
 
-### Core Scrum roles
+### Основные роли в Scrum
 1. Product Owner:
-   - Responsible for product
-   - Manages backlog
-   - Sets priorities
+   - Отвечает за продукт
+   - Управляет бэклогом
+   - Расставляет приоритеты
 2. Scrum Master:
-   - Facilitates processes
-   - Removes impediments
-   - Helps team
-3. Development Team:
-   - Develops product
-   - Self-organizing
-   - Cross-functional
+   - Фасилитирует процессы
+   - Устраняет препятствия
+   - Помогает команде
+3. Команда разработки:
+   - Разрабатывает продукт
+   - Самоорганизующаяся
+   - Кросс-функциональная
 
-### Scrum disadvantages
-1. Time estimation complexity
-2. Team availability dependency
-3. Need for constant communication
-4. Difficulty with fixed deadlines
-5. Requires team maturity
+### Недостатки Scrum
+1. Сложность оценки времени
+2. Зависимость от доступности команды
+3. Необходимость постоянной коммуникации
+4. Трудности с фиксированными дедлайнами
+5. Требует зрелости команды
 
-### Scrum vs Kanban differences
+### Отличия Scrum от Kanban
 1. Scrum:
-   - Fixed sprints
-   - Defined roles
-   - Story point estimation
+   - Фиксированные спринты
+   - Определённые роли
+   - Оценка в story points
 2. Kanban:
-   - Continuous flow
-   - Flexible roles
-   - Focus on cycle time
-3. Choice depends on:
-   - Project type
-   - Team maturity
-   - Business requirements
+   - Непрерывный поток
+   - Гибкие роли
+   - Фокус на времени цикла (cycle time)
+3. Выбор зависит от:
+   - Типа проекта
+   - Зрелости команды
+   - Бизнес-требований
 
-## Management and Leadership
+## Управление и лидерство
 
-### Crisis Management
-1. Immediate Response:
-   - Assess situation severity
-   - Form crisis response team
-   - Establish communication channels
-2. Action Plan:
-   - Define immediate steps
-   - Allocate resources
-   - Set clear responsibilities
-3. Communication:
-   - Keep stakeholders informed
-   - Provide regular updates
-   - Be transparent about issues
-4. Resolution:
-   - Implement solutions
-   - Monitor progress
-   - Document lessons learned
-5. Prevention:
-   - Update processes
-   - Improve monitoring
-   - Enhance training
+### Кризисное управление
+1. Немедленная реакция:
+   - Оценить серьёзность ситуации
+   - Сформировать антикризисную команду
+   - Выстроить каналы коммуникации
+2. План действий:
+   - Определить первоочередные шаги
+   - Распределить ресурсы
+   - Чётко распределить ответственность
+3. Коммуникация:
+   - Информировать стейкхолдеров
+   - Давать регулярные обновления
+   - Быть прозрачным в отношении проблем
+4. Решение:
+   - Внедрить решения
+   - Отслеживать прогресс
+   - Документировать извлечённые уроки
+5. Профилактика:
+   - Обновить процессы
+   - Улучшить мониторинг
+   - Усилить обучение
 
-### Strategic Planning
-1. Vision and Goals:
-   - Align with business objectives
-   - Set measurable targets
-   - Define success criteria
-2. Resource Planning:
-   - Team capacity assessment
-   - Skill gap analysis
-   - Training needs identification
-3. Risk Management:
-   - Identify potential risks
-   - Develop mitigation strategies
-   - Create contingency plans
-4. Implementation:
-   - Break down into phases
-   - Set milestones
-   - Track progress
-5. Review and Adjust:
-   - Regular assessments
-   - Feedback incorporation
-   - Strategy refinement
+### Стратегическое планирование
+1. Видение и цели:
+   - Согласовать с бизнес-задачами
+   - Установить измеримые цели
+   - Определить критерии успеха
+2. Планирование ресурсов:
+   - Оценка загрузки команды
+   - Анализ пробелов в навыках
+   - Определение потребностей в обучении
+3. Управление рисками:
+   - Выявить потенциальные риски
+   - Разработать стратегии митигации
+   - Создать планы на случай непредвиденных обстоятельств
+4. Реализация:
+   - Разбить на фазы
+   - Установить milestone'ы
+   - Отслеживать прогресс
+5. Анализ и корректировка:
+   - Регулярные оценки
+   - Учёт обратной связи
+   - Уточнение стратегии
 
-### Mentoring Program
-1. Program Structure:
-   - Clear objectives
-   - Timeline definition
-   - Success metrics
-2. Mentor Selection:
-   - Experience requirements
-   - Communication skills
-   - Time commitment
-3. Mentee Development:
-   - Skill assessment
-   - Learning path creation
-   - Progress tracking
-4. Knowledge Transfer:
-   - Technical skills
+### Программа менторства
+1. Структура программы:
+   - Чёткие цели
+   - Определение временны́х рамок
+   - Метрики успеха
+2. Выбор ментора:
+   - Требования к опыту
+   - Коммуникативные навыки
+   - Готовность уделять время
+3. Развитие менти:
+   - Оценка навыков
+   - Создание плана обучения
+   - Отслеживание прогресса
+4. Передача знаний:
+   - Технические навыки
    - Soft skills
-   - Company culture
-5. Program Evaluation:
-   - Regular feedback
-   - Effectiveness measurement
-   - Continuous improvement
+   - Культура компании
+5. Оценка программы:
+   - Регулярная обратная связь
+   - Измерение эффективности
+   - Непрерывное улучшение
 
-## Technical Excellence
+## Техническое совершенство
 
-### Code Quality Management
-1. Standards Implementation:
-   - Coding guidelines
-   - Review processes
-   - Automated checks
-2. Quality Metrics:
-   - Code coverage
-   - Complexity measures
-   - Performance indicators
-3. Continuous Improvement:
-   - Regular assessments
-   - Team feedback
-   - Process refinement
-4. Tools and Automation:
-   - Linting setup
+### Управление качеством кода
+1. Внедрение стандартов:
+   - Гайдлайны по написанию кода
+   - Процессы code review
+   - Автоматизированные проверки
+2. Метрики качества:
+   - Покрытие кода тестами
+   - Метрики сложности
+   - Показатели производительности
+3. Непрерывное улучшение:
+   - Регулярные оценки
+   - Обратная связь от команды
+   - Совершенствование процессов
+4. Инструменты и автоматизация:
+   - Настройка линтера
    - CI/CD pipeline
-   - Testing framework
-5. Knowledge Sharing:
-   - Documentation
-   - Team workshops
-   - Best practices
+   - Тестовый фреймворк
+5. Обмен знаниями:
+   - Документация
+   - Воркшопы для команды
+   - Лучшие практики
 
-### Architecture Design
-1. System Design:
-   - Scalability considerations
-   - Performance requirements
-   - Security aspects
-2. Technology Selection:
-   - Stack evaluation
-   - Tool assessment
-   - Framework choice
-3. Implementation Strategy:
-   - Phasing plan
-   - Migration approach
-   - Risk mitigation
-4. Quality Assurance:
-   - Testing strategy
-   - Performance monitoring
-   - Security audits
-5. Maintenance Plan:
-   - Update procedures
-   - Backup strategies
-   - Disaster recovery 
+### Проектирование архитектуры
+1. Проектирование системы:
+   - Масштабируемость
+   - Требования к производительности
+   - Аспекты безопасности
+2. Выбор технологий:
+   - Оценка стека
+   - Анализ инструментов
+   - Выбор фреймворка
+3. Стратегия реализации:
+   - Plan поэтапного внедрения
+   - Подход к миграции
+   - Митигация рисков
+4. Обеспечение качества:
+   - Стратегия тестирования
+   - Мониторинг производительности
+   - Аудиты безопасности
+5. План поддержки:
+   - Процедуры обновления
+   - Стратегии резервного копирования
+   - Disaster recovery

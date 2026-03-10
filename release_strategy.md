@@ -1,106 +1,106 @@
-# Release Strategy
+# Стратегия релизов
 
-[← Back to README](README.md)
+[← Назад к README](README.md)
 
-## Centralized (Trunk Based) approach
+## Централизованный подход (Trunk Based Development)
 
-Trunk-based development is a version control management practice where developers merge small, frequent updates to a core "trunk" or main branch. Since it streamlines merging and integration phases, it helps achieve CI/CD and increases software delivery and organizational performance.
+Trunk-based development — практика управления версиями, при которой разработчики часто вливают небольшие изменения в основную ветку («trunk» или main). Такой подход упрощает слияние и интеграцию, способствует внедрению CI/CD и повышает эффективность поставки программного обеспечения.
 
-## GitFlow approach
+## Подход GitFlow
 
-Giflow is an alternative Git branching model that involves the use of feature branches and multiple primary branches. It was first published and made popular by Vincent Driessen at nvie. Compared to trunk-based development, Giflow has numerous, longer-lived branches and larger commits. Under this model, developers create a feature branch and delay merging it to the main trunk branch until the feature is complete. These long-lived feature branches require more collaboration to merge and have a higher risk of deviating from the trunk branch. They can also introduce conflicting updates.
+GitFlow — альтернативная модель ветвления Git, предполагающая использование feature-веток и нескольких основных веток. Впервые опубликована и popularized Винсентом Дриссеном (nvie). По сравнению с trunk-based development, GitFlow использует многочисленные долгоживущие ветки и более крупные коммиты. В этой модели разработчики создают feature-ветку и откладывают её слияние с основной веткой до полной готовности фичи. Такие долгоживущие ветки требуют большей координации при слиянии и несут повышенный риск расхождения с основной веткой, а также могут порождать конфликты изменений.
 
-Some key takeaways to know about Gitflow are:
+Ключевые моменты GitFlow:
 
-- The workflow is great for a release-based software workflow.
-- Gitflow offers a dedicated channel for hotfixes to production.
- 
-The overall flow of Gitflow is:
+- Рабочий процесс отлично подходит для release-based workflow.
+- GitFlow предоставляет отдельный канал для hotfix в production.
 
-- A develop branch is created from main
-- A release branch is created from develop
-- Feature branches are created from develop
-- When a feature is complete it is merged into the develop branch
-- When the release branch is done it is merged into develop and main
-- If an issue in main is detected a hotfix branch is created from main
-- Once the hotfix is complete it is merged to both develop and main
+Общий поток GitFlow:
 
-## "Infrastructure as a Code" concept - Ansible / Ansible Tower
+- Из `main` создаётся ветка `develop`
+- Из `develop` создаётся ветка `release`
+- Из `develop` создаются `feature`-ветки
+- Когда фича готова, она вливается в `develop`
+- Когда `release`-ветка завершена, она вливается в `develop` и `main`
+- Если в `main` обнаружена проблема, из `main` создаётся `hotfix`-ветка
+- После завершения hotfix вливается в `develop` и `main`
 
-Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools. The IT infrastructure managed by this process comprises both physical equipment, such as bare-metal servers, as well as virtual machines, and associated configuration resources. The definitions may be in a version control system. The code in the definition files may use either scripts or declarative definitions, rather than maintaining the code through manual processes, but IaC more often employs declarative approaches.
+## Концепция «Infrastructure as Code» — Ansible / Ansible Tower
 
-## Dependency Management approaches
+Infrastructure as Code (IaC) — процесс управления и развёртывания вычислительной инфраструктуры с помощью машиночитаемых файлов конфигурации, а не ручной настройки оборудования или интерактивных инструментов. Управляемая инфраструктура включает физическое оборудование (bare-metal серверы), виртуальные машины и связанные ресурсы конфигурации. Файлы определений могут храниться в системе контроля версий. IaC чаще использует декларативный подход, а не скрипты или ручные процессы.
 
-* Identify and visualize
-* Engage with stakeholders
-* Make a risk log
-* Make contingency plans
+## Подходы к управлению зависимостями
 
-1. `Logical dependencies`. Also known as causal dependencies. These dependencies are an inherent part of the project and cannot be avoided. Tasks characterized as logical dependency usually use the output of the preceding tasks as input so you can't run them in parallel. Consider baking a cake as your project. You can't start the process unless you have all the ingredients you need.
+* Выявить и визуализировать
+* Взаимодействовать со стейкхолдерами
+* Вести журнал рисков
+* Составить планы на случай непредвиденных обстоятельств
 
-2. `Resource dependencies`. This dependency originates from a project constraint as it deals with the availability of shared resources. If two tasks require the same resource for completion, then they'll be dependent on the completion of the other.
+1. `Логические зависимости` (Logical dependencies). Иначе — причинно-следственные. Это неотъемлемая часть проекта, которую нельзя избежать. Задачи с логической зависимостью обычно используют результат предыдущих задач в качестве входных данных, поэтому их нельзя выполнять параллельно. Пример: нельзя начать печь торт, не имея всех ингредиентов.
 
-3. `Preferential dependencies`. These dependencies generally depend on the team members,  other stakeholders, and industrial practices. Preferential dependencies arise when tasks are scheduled to follow developed standard practices. In most cases, the project can compete even if you ignore the preferential dependencies in your tasks, but there will be some quality issues.
+2. `Ресурсные зависимости` (Resource dependencies). Возникают из-за ограниченности общих ресурсов: если две задачи требуют одного и того же ресурса, они зависят друг от друга.
 
-4. `External dependencies`. No matter how much you plan, there are things bound to be out of your control. Some tasks are dependent on outside factors and project managers can't do anything to influence their project progress. To deal with these dependencies, it's recommended to have a backup plan. Delays from the suppliers or other unforeseen circumstances may take place which can affect your progress. A good project manager always makes some contingency plans so everything keeps running smoothly even in the face of adversity.
+3. `Предпочтительные зависимости` (Preferential dependencies). Определяются членами команды, стейкхолдерами и отраслевыми практиками. Возникают, когда задачи планируются в соответствии с устоявшимися стандартами. В большинстве случаев проект может быть завершён даже без их соблюдения, однако пострадает качество.
 
-5. `Cross-team dependencies`. This is a common occurrence in large organizations. Sometimes multiple teams work on a single, complex project and they rely on each other to complete the project on time. Effective project time management can be implemented to avoid long hours.
+4. `Внешние зависимости` (External dependencies). Некоторые задачи зависят от внешних факторов, на которые менеджер проекта не может повлиять. Для их нивелирования рекомендуется иметь запасной план: задержки со стороны поставщиков или непредвиденные обстоятельства могут нарушить прогресс. Хороший менеджер всегда готовит планы на случай форс-мажора.
 
-## NuGet, Artifactory and Nexus
+5. `Межкомандные зависимости` (Cross-team dependencies). Распространены в крупных организациях: несколько команд работают над одним сложным проектом и зависят друг от друга. Для избежания переработок следует применять эффективное управление временем проекта.
 
-`nuget` NuGet is the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery is the central package repository used by all package authors and consumers. https://www.nuget.org/ https://www.nuget.org/packages/python
- 
-`Artifactory`  https://www.jfrog.com/confluence/display/JFROG/PyPI+Repositories
-Artifactory fully supports PyPI repositories providing:
+## NuGet, Artifactory и Nexus
 
-- The ability to provision PyPI packages from Artifactory to the pip command line tool from all repository types.
-- Calculation of Metadata for PyPI packages hosted in Artifactory's local repositories.
-- Access to remote PyPI repositories (such as https://pypi.org/) through a Remote Repositories which provides proxy and caching functionality.
-- The ability to access multiple PyPI repositories from a single URL by aggregating them under a Virtual Repositories.
-- Compatibility with the setuptools and its predecessor distutils libraries for uploading PyPI packages.
+`nuget` — менеджер пакетов для .NET. Клиентские инструменты NuGet обеспечивают создание и использование пакетов. NuGet Gallery — центральный репозиторий пакетов для всех авторов и потребителей. https://www.nuget.org/ https://www.nuget.org/packages/python
 
-`nexus`https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/pypi-repositories
+`Artifactory` https://www.jfrog.com/confluence/display/JFROG/PyPI+Repositories
+Artifactory полностью поддерживает PyPI-репозитории и предоставляет:
 
-Both Nexus Repository Manager Pro and Nexus Repository Manager OSS support proxying the Python Package Index. This allows the repository manager to take advantage of the packages in the official Python Package Index without incurring repeated downloads. This will reduce time and bandwidth usage for accessing Python packages.
+- Возможность поставлять PyPI-пакеты из Artifactory в pip из репозиториев любых типов.
+- Вычисление метаданных для PyPI-пакетов, размещённых в локальных репозиториях Artifactory.
+- Доступ к удалённым PyPI-репозиториям (например, https://pypi.org/) через Remote Repositories с функциями прокси и кэширования.
+- Доступ к нескольким PyPI-репозиториям через единый URL путём их агрегации в Virtual Repositories.
+- Совместимость с библиотеками setuptools и distutils для загрузки PyPI-пакетов.
 
-## Branching strategy
+`nexus` https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/pypi-repositories
+
+Nexus Repository Manager Pro и Nexus Repository Manager OSS поддерживают проксирование Python Package Index. Это позволяет менеджеру репозиториев использовать пакеты из официального PyPI без повторных загрузок, экономя время и трафик.
+
+## Стратегии ветвления
 
 https://www.bmc.com/blogs/devops-branching-strategies
 
 ### Git Flow
-Git Flow is the most widely known branching strategy that takes a multi-branch approach to manage the source code. This approach consists of two main branches that live throughout the development lifecycle.
+Git Flow — наиболее известная стратегия ветвления, использующая многоветочный подход. Включает две основные ветки, живущие на протяжении всего цикла разработки.
 
-Primary Branches
-- `master`. The primary branch where all the production code is stored. Once the code in the "develop" branch is ready to be released, the changes are merged to the master branch and used in the deployment.
-- `develop`. This is where all the actual development happens. All the pre-production code is stored here, and the completed code of all the supporting branches is merged directly to the develop branch.
-- `feature-*` feature branches are used to develop new features and branches off exclusively from the develop branch.
-- `hotfix-*` This is to deal with production issues where quick fixes are required. They can branch off from the master itself, but need to be merged to both master and develop branches.
-- `release-*` This branch is used to aggregate fixes and improvements and prepare for the production release. It will be branched from the develop branch and merged to both develop and master.
+Основные ветки:
+- `master`. Основная ветка с production-кодом. Когда код в `develop` готов к выпуску, изменения вливаются в master и используются при деплое.
+- `develop`. Здесь происходит вся разработка. Весь pre-production код хранится здесь; завершённый код из вспомогательных веток вливается напрямую в develop.
+- `feature-*`. Feature-ветки создаются только из `develop` для разработки новой функциональности.
+- `hotfix-*`. Для срочных исправлений production-проблем. Ответвляются от `master`, вливаются в `master` и `develop`.
+- `release-*`. Для сбора исправлений и подготовки к production-релизу. Ответвляется от `develop`, вливается в `develop` и `master`.
 
 ### GitHub Flow
-As the name suggests, this strategy was introduced by GitHub, aiming to provide a simple and lightweight approach to manage the development. It adheres to the following guidelines when managing the source control with a single primary branch.
+Стратегия, введённая GitHub с целью упростить управление разработкой. Придерживается следующих принципов при работе с единственной основной веткой:
 
-- `master`. The primary branch where code is branched off from and merged to. Anything in the master branch is deployable.
-- Any change (feature/bug) is made in a new branch derived from the master with a descriptive branch name describing the development.
-- Commit to the development branch locally and regularly push to the branch.
-- Create a pull request once the development is done so that the code can be reviewed.
-- Once the code is reviewed and approved, it must be tested in the branch before merging to the master branch.
-- From this point, users can immediately deploy the master branch with the new changes.
+- `master`. Основная ветка — от неё ответвляются и в неё вливаются изменения. Всё, что в master, готово к деплою.
+- Любое изменение (фича/баг) выполняется в новой ветке от `master` с описательным названием.
+- Коммиты делаются локально, изменения регулярно пушатся в ветку.
+- После завершения разработки создаётся pull request для code review.
+- После одобрения код тестируется в ветке перед слиянием в `master`.
+- После слияния изменения из `master` можно немедленно задеплоить.
 
 ### Trunk Based Development (TBD)
-The Trunk Based Development strategy involves developers integrating their changes directly into a shared trunk (master) at least once a day. This shared trunk is always in a releasable state. Developers can pull from this trunk, create a local repository, and then push the code to the shared trunk.
+Стратегия, при которой разработчики интегрируют изменения напрямую в общий trunk (master) как минимум раз в день. Общий trunk всегда находится в состоянии, готовом к релизу. Разработчики могут забирать изменения из trunk, работать локально и пушить код обратно.
 
-This regular integration enables developers to view each other's changes quickly and immediately react if there are any conflicts.
+Регулярная интеграция позволяет разработчикам быстро видеть изменения друг друга и оперативно реагировать на конфликты.
 
 ### GitLab Flow
-The GitLab strategy combines feature-driven development and feature branches with issue tracking. This strategy is similar to GitHub flow yet includes environmental branches such as `development`, `pre-production`, and `production`.
+Стратегия GitLab объединяет feature-driven development и feature-ветки с отслеживанием задач. Схожа с GitHub Flow, но включает environment-ветки: `development`, `pre-production` и `production`.
 
-In GitLab Flow, development happens in one of these environmental branches, and verified and tested code is merged to other branches until they reach the production branch. Let's assume that we have the three environmental branches mentioned above. In that case, the development workflow will be:
+В GitLab Flow разработка ведётся в одной из environment-веток; проверенный и протестированный код последовательно вливается в следующие ветки вплоть до production.
 
-## Continuous Integration	
-* Follows CI rules (use project's CI tools, immediately fix broken build, etc.)	
-* Writes/Updates build configuration script
-* Implements and improves CI processes on the project
+## Continuous Integration
+* Соблюдение правил CI (использование CI-инструментов проекта, немедленное исправление сломанного билда и т.д.)
+* Написание/обновление скриптов конфигурации сборки
+* Внедрение и улучшение CI-процессов на проекте
 
-## Continuous Delivery & Deployment		
-* Has experience with Delivery Pipeline usage 
+## Continuous Delivery & Deployment
+* Опыт работы с Delivery Pipeline

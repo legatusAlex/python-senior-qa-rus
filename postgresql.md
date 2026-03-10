@@ -1,27 +1,27 @@
-# PostgreSQL Questions
+# Вопросы по PostgreSQL
 
-[← Back to README](README.md)
+[← Назад к README](README.md)
 
-## Database Architecture and Concepts
+## Архитектура и основные концепции
 
-### What is PostgreSQL?
-PostgreSQL is an open-source object-relational database system that uses and extends the SQL language.
+### Что такое PostgreSQL?
+PostgreSQL — объектно-реляционная СУБД с открытым исходным кодом, использующая и расширяющая язык SQL.
 
-### What are the key features of PostgreSQL?
-- ACID compliance
-- Complex queries
-- Foreign keys
-- Triggers
-- Views
-- Multiversion concurrency control
-- Streaming replication
+### Ключевые возможности PostgreSQL:
+- Соответствие ACID
+- Сложные запросы
+- Внешние ключи (Foreign keys)
+- Триггеры
+- Представления (Views)
+- Многоверсионное управление конкурентным доступом (MVCC)
+- Потоковая репликация (Streaming replication)
 
-## Indexing and Performance
+## Индексы и производительность
 
-### What is a non-clustered index?
-A non-clustered index is a type of index where the order of the rows does not match the order of the actual data.
+### Что такое некластеризованный индекс?
+Некластеризованный индекс — тип индекса, при котором порядок строк в индексе не совпадает с физическим порядком данных в таблице.
 
-### What are the different types of indexes in PostgreSQL?
+### Типы индексов в PostgreSQL:
 - B-tree
 - Hash
 - GiST
@@ -29,47 +29,47 @@ A non-clustered index is a type of index where the order of the rows does not ma
 - GIN
 - BRIN
 
-### How do indexes affect performance?
-Indexes improve query performance by providing quick access paths to data, but they add overhead for write operations.
+### Как индексы влияют на производительность?
+Индексы ускоряют выборку данных, обеспечивая быстрый доступ, однако добавляют накладные расходы при операциях записи.
 
-## Data Types and Storage
+## Типы данных и хранение
 
-### Can you store binary data in PostgreSQL?
-Yes, using either bytes or the large object feature.
+### Можно ли хранить бинарные данные в PostgreSQL?
+Да — с помощью типа `bytea` или механизма больших объектов (large objects).
 
-### What are the advantages of JSONB over JSON?
-- Better performance for reading
-- Indexing support
-- No parsing needed
-- Compression
+### Преимущества JSONB перед JSON:
+- Более высокая производительность при чтении
+- Поддержка индексирования
+- Не требует повторного парсинга
+- Сжатие данных
 
-### How does PostgreSQL handle arrays?
-PostgreSQL allows columns of a table to be defined as variable-length multidimensional arrays.
+### Как PostgreSQL работает с массивами?
+PostgreSQL позволяет определять столбцы таблицы как многомерные массивы переменной длины.
 
-## Functions and Procedures
+## Функции и процедуры
 
-### Explain functions in PostgreSQL
-Functions in PostgreSQL are also known as stored procedures. They can be created in several languages such as SQL, PL/pgSQL, C, Python, etc.
+### Функции в PostgreSQL
+Функции в PostgreSQL также называются хранимыми процедурами. Их можно создавать на нескольких языках: SQL, PL/pgSQL, C, Python и др.
 
-### What are the different types of functions?
-- Query functions
-- Aggregate functions
-- Window functions
-- Trigger functions
-- Table functions
+### Типы функций:
+- Запросные функции (Query functions)
+- Агрегатные функции (Aggregate functions)
+- Оконные функции (Window functions)
+- Триггерные функции (Trigger functions)
+- Табличные функции (Table functions)
 
-### What is the difference between functions and procedures?
-- Functions must return a value
-- Procedures are designed to execute operations
-- Functions can be used in SELECT statements
-- Procedures are called using CALL statement
+### Разница между функциями и процедурами:
+- Функции обязаны возвращать значение
+- Процедуры предназначены для выполнения операций
+- Функции можно использовать в SELECT-запросах
+- Процедуры вызываются через оператор CALL
 
-## Data Manipulation
+## Манипуляция данными
 
-### How can we change the column data type in SQL?
-Using ALTER TABLE with ALTER COLUMN statement.
+### Как изменить тип данных столбца?
+С помощью `ALTER TABLE` с командой `ALTER COLUMN`.
 
-### What are the different types of constraints?
+### Типы ограничений (constraints):
 - NOT NULL
 - UNIQUE
 - PRIMARY KEY
@@ -77,75 +77,75 @@ Using ALTER TABLE with ALTER COLUMN statement.
 - CHECK
 - EXCLUDE
 
-### How do you handle NULL values?
-Using IS NULL, IS NOT NULL, COALESCE, and NULLIF functions.
+### Как работать со значениями NULL?
+С помощью операторов и функций: `IS NULL`, `IS NOT NULL`, `COALESCE`, `NULLIF`.
 
-## Transaction Management
+## Управление транзакциями
 
-### What is MVCC (Multi-Version Concurrency Control)?
-MVCC provides concurrent access to the database without unnecessary locking.
+### Что такое MVCC (Multi-Version Concurrency Control)?
+MVCC обеспечивает параллельный доступ к базе данных без излишней блокировки.
 
-### What are the transaction isolation levels?
+### Уровни изоляции транзакций:
 - Read Uncommitted
 - Read Committed
 - Repeatable Read
 - Serializable
 
-### How does PostgreSQL handle deadlocks?
-PostgreSQL automatically detects deadlocks and resolves them by aborting one of the transactions.
+### Как PostgreSQL обрабатывает дедлоки?
+PostgreSQL автоматически обнаруживает дедлоки и разрешает их, прерывая одну из транзакций.
 
-## Backup and Recovery
+## Резервное копирование и восстановление
 
-### What are the backup methods?
-- pg_dump
-- pg_dumpall
-- Continuous archiving
-- Physical backups
+### Методы резервного копирования:
+- `pg_dump`
+- `pg_dumpall`
+- Непрерывное архивирование (Continuous archiving)
+- Физические бэкапы
 
-### How do you implement replication?
-- Streaming replication
-- Logical replication
-- Trigger-based replication
+### Способы реализации репликации:
+- Потоковая репликация (Streaming replication)
+- Логическая репликация (Logical replication)
+- Репликация на основе триггеров
 - Slony-I
 
-### What is WAL (Write-Ahead Logging)?
-WAL ensures data integrity by logging changes before they are written to the database.
+### Что такое WAL (Write-Ahead Logging)?
+WAL гарантирует целостность данных, записывая изменения в журнал до их фиксации в базе.
 
-## Performance Tuning
+## Оптимизация производительности
 
-### How do you optimize queries?
-- Use EXPLAIN ANALYZE
-- Proper indexing
-- Query rewriting
-- Table partitioning
-- Regular VACUUM
+### Как оптимизировать запросы?
+- Использовать `EXPLAIN ANALYZE`
+- Правильно строить индексы
+- Переписывать запросы
+- Партиционирование таблиц
+- Регулярный `VACUUM`
 
-### What are the important configuration parameters?
-- shared_buffers
-- work_mem
-- maintenance_work_mem
-- effective_cache_size
-- max_connections
+### Важные параметры конфигурации:
+- `shared_buffers`
+- `work_mem`
+- `maintenance_work_mem`
+- `effective_cache_size`
+- `max_connections`
 
-### How do you handle large tables?
-- Partitioning
-- Table inheritance
-- Regular cleanup
-- Archiving old data
+### Как работать с большими таблицами?
+- Партиционирование
+- Наследование таблиц (Table inheritance)
+- Регулярная очистка
+- Архивирование устаревших данных
 
-## Security
+## Безопасность
 
-### What are the security features?
-- Authentication methods
-- Role-based access control
-- SSL support
-- Row-level security
-- Column-level encryption
+### Возможности безопасности PostgreSQL:
+- Методы аутентификации
+- Управление доступом на основе ролей (RBAC)
+- Поддержка SSL
+- Безопасность на уровне строк (Row-level security)
+- Шифрование на уровне столбцов
 
-### How do you implement row-level security?
-Using CREATE POLICY and ALTER TABLE ... ENABLE ROW LEVEL SECURITY.
+### Как реализовать безопасность на уровне строк?
+С помощью `CREATE POLICY` и `ALTER TABLE ... ENABLE ROW LEVEL SECURITY`.
 
-### What are the authentication methods?
+### Методы аутентификации:
 - Password
 - LDAP
 - GSSAPI
@@ -153,128 +153,128 @@ Using CREATE POLICY and ALTER TABLE ... ENABLE ROW LEVEL SECURITY.
 - PAM
 - Radius
 
-## Monitoring and Maintenance
+## Мониторинг и обслуживание
 
-### How do you monitor PostgreSQL?
-- pg_stat_activity
-- pg_stat_statements
-- System catalogs
-- Log analysis
-- External monitoring tools
+### Инструменты мониторинга PostgreSQL:
+- `pg_stat_activity`
+- `pg_stat_statements`
+- Системные каталоги (System catalogs)
+- Анализ логов
+- Внешние инструменты мониторинга
 
-### What is VACUUM and why is it important?
-VACUUM reclaims storage occupied by dead tuples and updates statistics.
+### Что такое VACUUM и зачем он нужен?
+VACUUM освобождает место, занятое «мёртвыми» кортежами, и обновляет статистику планировщика.
 
-### How do you handle table bloat?
-- Regular VACUUM
-- CLUSTER command
-- Table rewriting
-- Monitoring bloat levels
+### Как бороться с раздуванием таблиц (table bloat)?
+- Регулярный `VACUUM`
+- Команда `CLUSTER`
+- Перезапись таблицы
+- Мониторинг уровня bloat
 
-### What are the HA solutions?
+### Решения для высокой доступности (HA):
 - Streaming replication
 - Patroni
 - pgPool-II
 - Stolon
 - Repmgr
 
-### How do you implement failover?
-Using tools like:
+### Как реализовать failover?
+С помощью инструментов:
 - Patroni
 - pgPool-II
 - Repmgr
-- Custom scripts
+- Собственные скрипты
 
-### What is connection pooling?
-Connection pooling manages a pool of connections to reduce overhead of creating new connections.
+### Что такое пул соединений (connection pooling)?
+Пул соединений управляет набором готовых подключений, снижая накладные расходы на создание новых соединений.
 
-## High Availability
-- Replication setup
-- Failover mechanisms
-- Load balancing
-- Monitoring
-- Backup strategies
+## Высокая доступность (HA)
+- Настройка репликации
+- Механизмы failover
+- Балансировка нагрузки
+- Мониторинг
+- Стратегии резервного копирования
 
-## Data Management
+## Управление данными
 
 ### Data Lake
-A storage repository that holds a vast amount of raw data in its native format.
+Хранилище, содержащее большой объём сырых данных в исходном формате.
 
 ### Data Warehouse
-A system for reporting and data analysis, considered a core component of business intelligence.
+Система для отчётности и анализа данных — ключевой компонент бизнес-аналитики (BI).
 
 ### Data Mesh
-A decentralized socio-technical approach to share, access, and manage analytical data.
+Децентрализованный подход к обмену, доступу и управлению аналитическими данными.
 
 ### Event Sourcing
-Storing data as a sequence of events rather than just the current state.
+Хранение данных в виде последовательности событий, а не только текущего состояния.
 
 ### CQRS
-Pattern that separates read and write operations for a data store.
+Паттерн, разделяющий операции чтения и записи для хранилища данных.
 
 ### Polyglot Persistence
-Using different data storage technologies for different data storage needs.
+Использование разных технологий хранения данных для разных задач.
 
-### Data Replication
-The process of storing data in more than one site or node.
+### Репликация данных (Data Replication)
+Хранение данных более чем в одном узле или месте.
 
-### Data Sharding
-A type of database partitioning that separates large databases into smaller, faster, more easily managed parts.
+### Шардирование данных (Data Sharding)
+Тип партиционирования БД, при котором большие базы разбиваются на меньшие, более быстрые и управляемые части.
 
-## API Design
+## Проектирование API
 
 ### REST
-Representational State Transfer - architectural style for distributed hypermedia systems.
+Representational State Transfer — архитектурный стиль для распределённых гипермедиа-систем.
 
 ### GraphQL
-A query language for APIs and a runtime for executing those queries.
+Язык запросов для API и среда выполнения этих запросов.
 
 ### gRPC
-A high-performance, open-source universal RPC framework.
+Высокопроизводительный универсальный RPC-фреймворк с открытым исходным кодом.
 
-### API Versioning
-Strategies for managing changes to APIs without breaking existing clients.
+### Версионирование API
+Стратегии управления изменениями в API без нарушения работы существующих клиентов.
 
 ### API Gateway
-A server that acts as an API front-end, receiving API requests and routing them to appropriate backends.
+Сервер, выступающий фронтендом для API: принимает запросы и маршрутизирует их к нужным бэкендам.
 
-### API Documentation
-Tools and practices for documenting APIs effectively.
+### Документирование API
+Инструменты и практики эффективного документирования API.
 
-### API Security
-Methods and practices for securing APIs against various threats.
+### Безопасность API
+Методы и практики защиты API от различных угроз.
 
 ### Rate Limiting
-Controlling the rate of requests a client can make to an API.
+Ограничение частоты запросов от клиента к API.
 
-## Error Handling
+## Обработка ошибок
 
 ### Circuit Breaker
-Pattern that prevents an application from repeatedly trying to execute an operation that's likely to fail.
+Паттерн, предотвращающий многократные попытки выполнения операции, которая, вероятно, завершится ошибкой.
 
 ### Retry Pattern
-Pattern that enables an application to retry an operation in anticipation of it eventually succeeding.
+Паттерн, позволяющий приложению повторять операцию в расчёте на то, что она в конечном счёте успешно выполнится.
 
 ### Fallback Pattern
-Defining alternative actions when a service fails.
+Определение альтернативных действий при сбое сервиса.
 
 ### Bulkhead Pattern
-Isolating elements of an application into pools so that if one fails, the others will continue to function.
+Изоляция компонентов приложения в пулы: сбой одного не влияет на работу остальных.
 
 ### Dead Letter Queue
-A service implementation to store messages that meet one or more of the following criteria:
-- Message that is sent to a queue that does not exist.
-- Queue length limit exceeded.
-- Message length limit exceeded.
-- Message is rejected by another queue exchange.
-- Message reaches a threshold read counter number, because it is not consumed.
-- Message TTL is exceeded.
+Реализация для хранения сообщений, соответствующих одному или нескольким условиям:
+- Сообщение отправлено в несуществующую очередь
+- Превышен лимит длины очереди
+- Превышен лимит размера сообщения
+- Сообщение отклонено другим обменником очереди
+- Сообщение достигло порогового счётчика попыток чтения (не было потреблено)
+- Истёк TTL сообщения
 
-### Error Tracking
-Tools and practices for monitoring and tracking application errors.
+### Отслеживание ошибок (Error Tracking)
+Инструменты и практики мониторинга и отслеживания ошибок приложения.
 
-### Logging and Monitoring
-Practices for effective application logging and monitoring.
+### Логирование и мониторинг
+Практики эффективного логирования и мониторинга приложений.
 
 ### Graceful Degradation
-The ability of a system to maintain limited functionality even when a large portion of it is inoperable. 
+Способность системы сохранять ограниченную функциональность даже при отказе значительной её части.
