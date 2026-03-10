@@ -1,113 +1,113 @@
-# Cross-discipline Questions
+# Кросс-дисциплинарные вопросы
 
-[← Back to README](README.md)
+[← Назад к README](README.md)
 
-## Design patterns Cheetsheet
+## Шпаргалка по паттернам проектирования
 
-### Behavioral (green) Cheetsheet
+### Поведенческие паттерны (зелёные)
 
 <img src="images/designpatterns1.jpeg">
 
-### Structural (orange) and Creational (blue) Cheetsheet
+### Структурные (оранжевые) и Порождающие (синие)
 
 <img src="images/designpatterns2.jpeg">
 
-## Creational Design Patterns
+## Порождающие паттерны (Creational)
 
-### Factory Method - Common interface
-Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. 
+### Factory Method — общий интерфейс
+Определяет общий интерфейс для создания объектов в суперклассе, позволяя подклассам изменять тип создаваемых объектов.
 
-### Abstract Factory - Furniture -> Antique, Modern ...
-Lets you produce families of related objects without specifying their concrete classes.
+### Abstract Factory — Мебель → Антикварная, Современная...
+Позволяет создавать семейства связанных объектов, не привязываясь к их конкретным классам.
 
-### Builder - Pizza making actions
-Lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+### Builder — процесс приготовления пиццы
+Позволяет создавать сложные объекты пошагово. Один и тот же код построения может давать разные представления объекта.
 
-### Prototype - Copy and Deepcopy
-Lets you copy existing objects without making your code dependent on their classes.
+### Prototype — Copy и Deepcopy
+Позволяет копировать объекты, не вдаваясь в подробности их реализации.
 
-### Singleton - DB connection
-Lets you ensure that a class has only one instance, while providing a global access point to this instance.
+### Singleton — подключение к БД
+Гарантирует, что у класса есть только один экземпляр, и предоставляет глобальную точку доступа к нему.
 
-## Structural Design Patterns
+## Структурные паттерны (Structural)
 
-### Adapter - XML -> JSON
-Allows objects with incompatible interfaces to collaborate.
+### Adapter — XML → JSON
+Позволяет объектам с несовместимыми интерфейсами работать вместе.
 
-### Bridge - Different shapes can have different colors
-Lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
+### Bridge — разные фигуры могут иметь разные цвета
+Разделяет один или несколько классов на две отдельные иерархии — абстракцию и реализацию — которые можно развивать независимо друг от друга.
 
-### Composite - Tree Structure (Folder/Element)
-Lets you compose objects into tree structures and then work with these structures as if they were individual objects.
+### Composite — древовидная структура (папка/элемент)
+Позволяет сгруппировать объекты в древовидную структуру и работать с ней как с единым объектом.
 
-### Decorator - Additional features for object
-Lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+### Decorator — дополнительные возможности для объекта
+Позволяет динамически добавлять объектам новое поведение, помещая их в объекты-обёртки.
 
-### Facade - Simple interface for video converter
-Provides a simplified interface to a library, a framework, or any other complex set of classes.
+### Facade — простой интерфейс для конвертера видео
+Предоставляет простой интерфейс к сложной системе классов, библиотеке или фреймворку.
 
-### Flyweight - Bullet in games = Particle + Current Position
-Lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
+### Flyweight — пуля в игре = Частица + Текущая позиция
+Позволяет вместить большее количество объектов в отведённую оперативную память, разделяя общее состояние между объектами.
 
-### Proxy - Do not invoke heavy object while you can
-Lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+### Proxy — не создавай тяжёлый объект без необходимости
+Предоставляет заменитель или местозаполнитель для другого объекта и контролирует доступ к нему, выполняя что-то до или после передачи запроса исходному объекту.
 
-## Behavioral Design Patterns
+## Поведенческие паттерны (Behavioral)
 
-### Chain of Responsibility - Support Levels
-Lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+### Chain of Responsibility — уровни техподдержки
+Позволяет передавать запросы по цепочке обработчиков. Каждый обработчик сам решает, обработать запрос или передать дальше.
 
-### Command - Save command in various place of interface
-Turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request's execution, and support undoable operations.
+### Command — сохранение команды в разных частях интерфейса
+Превращает запросы в объекты, что позволяет передавать их как аргументы, ставить в очередь, откатывать выполненные операции.
 
 ### Iterator (iter, next)
-Lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
+Позволяет обходить элементы коллекции, не раскрывая её внутреннее представление (список, стек, дерево и т.д.).
 
-### Mediator - Airport dispatcher
-Lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
+### Mediator — диспетчер аэропорта
+Уменьшает хаотичные зависимости между объектами, ограничивая прямые связи и вынуждая объекты взаимодействовать только через объект-посредник.
 
-### Memento - Undo operation (Ctrl+Z)
-Lets you save and restore the previous state of an object without revealing the details of its implementation.
+### Memento — отмена операции (Ctrl+Z)
+Позволяет сохранять и восстанавливать прошлые состояния объектов, не раскрывая деталей реализации.
 
-### Observer - Publisher + Subscriber
-Lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they're observing.
+### Observer — Издатель + Подписчик
+Позволяет одним объектам следить за изменениями других и реагировать на эти события.
 
-### State - Draft -> Published
-Lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.
+### State — Черновик → Опубликован
+Позволяет объектам менять поведение в зависимости от внутреннего состояния — со стороны это выглядит как смена класса объекта.
 
-### Strategy - Navigator -> Drive or Walk
-Lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+### Strategy — Навигатор → Машина или Пешком
+Определяет семейство алгоритмов, инкапсулирует каждый из них и делает их взаимозаменяемыми.
 
 ### Template Method
-Defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
+Определяет скелет алгоритма в базовом классе, позволяя подклассам переопределять отдельные шаги без изменения общей структуры.
 
-### Visitor (Looks like Mixin)
-Lets you separate algorithms from the objects on which they operate.
+### Visitor (похож на Mixin)
+Позволяет добавлять новые операции к объектам, не изменяя их классы.
 
-## CAP Theorem
+## Теорема CAP
 
-### Availability
-Availability means that every request from the user should elicit a response from the system. Whether the user wants to read or write, the user should get a response even if the operation was unsuccessful.
+### Доступность (Availability)
+Каждый запрос пользователя должен получить ответ от системы. Независимо от того, читает пользователь или пишет, он должен получить ответ — даже если операция завершилась неудачей.
 
-### Consistency
-Consistency means that the user should be able to see the same data no matter which node they connect to on the system. This data is the most recent data written to the system.
+### Согласованность (Consistency)
+Пользователь должен видеть одни и те же данные вне зависимости от того, к какому узлу системы он обращается. Это всегда самые актуальные данные.
 
-### Partition tolerance
-Partition refers to a communication break between nodes within a distributed system. Partition tolerance means that the system should still be able to work even if there is a partition in the system.
+### Устойчивость к разделению (Partition tolerance)
+Разделение (partition) — это разрыв связи между узлами распределённой системы. Устойчивость к разделению означает, что система продолжает работать даже при наличии такого разрыва.
 
-## Modern Software Architecture Patterns
-- Event-Driven Architecture (EDA)
-- CQRS (Command Query Responsibility Segregation)
-- Event Sourcing
-- Microservices Architecture
-- Serverless Architecture
-- Hexagonal Architecture (Ports and Adapters)
-- Clean Architecture
-- Domain-Driven Design (DDD)
+## Современные паттерны архитектуры ПО
+- Event-Driven Architecture (EDA) — событийно-ориентированная архитектура
+- CQRS (Command Query Responsibility Segregation) — разделение ответственности команд и запросов
+- Event Sourcing — источник событий
+- Микросервисная архитектура
+- Бессерверная архитектура (Serverless)
+- Гексагональная архитектура (Ports and Adapters)
+- Чистая архитектура (Clean Architecture)
+- Domain-Driven Design (DDD) — предметно-ориентированное проектирование
 
-## Cloud-Native Patterns
-- 12-Factor App methodology
-- Container Orchestration
+## Cloud-Native паттерны
+- Методология 12-Factor App
+- Оркестрация контейнеров (Container Orchestration)
 - Service Mesh
 - API Gateway
 - Circuit Breaker
@@ -117,93 +117,93 @@ Partition refers to a communication break between nodes within a distributed sys
 - Adapter Pattern
 - Back Pressure Pattern
 
-## Security Patterns
-- OAuth 2.0 and OpenID Connect
+## Паттерны безопасности
+- OAuth 2.0 и OpenID Connect
 - JWT (JSON Web Tokens)
-- API Security
-- Zero Trust Architecture
-- Defense in Depth
-- Least Privilege Principle
+- Безопасность API
+- Архитектура нулевого доверия (Zero Trust)
+- Глубокая защита (Defense in Depth)
+- Принцип минимальных привилегий (Least Privilege)
 - Security by Design
-- DevSecOps practices
+- Практики DevSecOps
 
-## Performance Patterns
-- Caching Strategies
-- Load Balancing
-- Database Sharding
-- Read Replicas
+## Паттерны производительности
+- Стратегии кэширования (Caching Strategies)
+- Балансировка нагрузки (Load Balancing)
+- Шардирование БД (Database Sharding)
+- Реплики для чтения (Read Replicas)
 - Write-Ahead Logging
-- Connection Pooling
-- Rate Limiting
+- Пул соединений (Connection Pooling)
+- Ограничение частоты запросов (Rate Limiting)
 - Circuit Breaking
 - Bulkhead Isolation
 
-## Testing Patterns
+## Паттерны тестирования
 - Test-Driven Development (TDD)
 - Behavior-Driven Development (BDD)
-- Continuous Testing
+- Непрерывное тестирование (Continuous Testing)
 - Shift-Left Testing
-- Test Pyramid
+- Пирамида тестирования (Test Pyramid)
 - Feature Flags
-- A/B Testing
+- A/B тестирование
 - Chaos Engineering
 
-## DevOps Patterns
+## DevOps-паттерны
 - Infrastructure as Code (IaC)
 - GitOps
-- Continuous Integration/Deployment
+- Непрерывная интеграция/доставка (CI/CD)
 - Blue-Green Deployment
 - Canary Releases
 - Feature Flags
-- Configuration Management
-- Monitoring and Observability
+- Управление конфигурацией (Configuration Management)
+- Мониторинг и наблюдаемость (Monitoring and Observability)
 
-## Data Management Patterns
+## Паттерны управления данными
 - Data Lake
 - Data Warehouse
 - Data Mesh
 - Event Sourcing
 - CQRS
-- Polyglot Persistence
-- Data Replication
-- Data Sharding
+- Полиглотное хранение (Polyglot Persistence)
+- Репликация данных (Data Replication)
+- Шардирование данных (Data Sharding)
 
-## API Design Patterns
+## Паттерны проектирования API
 - REST
 - GraphQL
 - gRPC
-- API Versioning
+- Версионирование API
 - API Gateway
-- API Documentation
-- API Security
+- Документирование API
+- Безопасность API
 - Rate Limiting
 
-## Error Handling Patterns
+## Паттерны обработки ошибок
 - Circuit Breaker
 - Retry Pattern
 - Fallback Pattern
 - Bulkhead Pattern
 - Dead Letter Queue
-- Error Tracking
-- Logging and Monitoring
+- Отслеживание ошибок (Error Tracking)
+- Логирование и мониторинг
 - Graceful Degradation
 
-## Scalability Patterns
-- Horizontal Scaling
-- Vertical Scaling
-- Load Balancing
-- Database Sharding
-- Caching
-- Message Queues
-- Microservices
-- Serverless Computing
+## Паттерны масштабируемости
+- Горизонтальное масштабирование
+- Вертикальное масштабирование
+- Балансировка нагрузки
+- Шардирование БД
+- Кэширование
+- Очереди сообщений (Message Queues)
+- Микросервисы
+- Бессерверные вычисления (Serverless Computing)
 
-## Monitoring and Observability Patterns
-- Distributed Tracing
-- Metrics Collection
-- Log Aggregation
-- Alerting
-- Dashboarding
+## Паттерны мониторинга и наблюдаемости
+- Распределённая трассировка (Distributed Tracing)
+- Сбор метрик (Metrics Collection)
+- Агрегация логов (Log Aggregation)
+- Алертинг
+- Дашборды
 - APM (Application Performance Monitoring)
-- Synthetic Monitoring
-- Real User Monitoring (RUM) 
+- Синтетический мониторинг (Synthetic Monitoring)
+- Мониторинг реальных пользователей (Real User Monitoring, RUM)
